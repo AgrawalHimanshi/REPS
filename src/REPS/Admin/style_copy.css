@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+
+body {
+
+	background: gray ;
+	color: white;
+	margin: 0;
+}
+
+.ECI
+{
+	
+	/*background-color: gray;*/
+	font-size: 25px;
+	height: 30px;
+		
+	 
+	
+}
+header
+{
+	background: #36486b;
+	color: white; 
+	padding: 15px 0px 2px 30px ;
+	 font-family: 'Roboto Slab', serif;
+	font-size: 35px;
+	height: 55px;
+	margin-top: 2px;
+
+	
+	
+}
+header h1 
+{
+display: inline;
+	font-family: 'Roboto Slab', serif; 
+}
+nav ul
+{
+	display: inline;
+	padding: 0px;
+	/*float: left;*/
+}
+nav ul li
+{
+	display: inline-block;
+	list-style-type: none;
+	color: white;
+	float: left;
+
+	margin-left: 45px;
+}
+nav ul li a
+{
+	color: white;
+
+	text-decoration: none;
+	font-size: 25px;
+}
+#nav{
+	font-family: 'Roboto Slab', serif;
+}
+
+.homered
+{
+	background-color: red;
+	padding: 15px 10px 24px 10px;
+}
+.divider
+{
+	background-color: red;
+	height: 5px ;
+
+}
+.homeblack:hover
+{
+	
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 15px 10px 24px 10px;
+}
+
+
+.container
+{
+	position: relative;
+	width: 50%;
+}
+.imgregister
+{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.overlay
+{
+	position: absolute;
+	top: 0
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #008CBA;
+
+}
+
+.container:hover .overlay
+{
+	opacity: 1;
+}
+.text
+{
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+/*.main
+{
+background-image: url(top_banner_29082017.jpg);
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}*/

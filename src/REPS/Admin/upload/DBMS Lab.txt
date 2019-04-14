@@ -1,0 +1,304 @@
+		DBMS Lab
+heyubuntu#
+//read about scope_idendity
+
+mysql -u root -p
+root123#  
+
+database structure is called database schema. 
+in database schema we will manage the record and create the record.
+ 
+For database--->
+1.create
+2.update
+3.delete
+
+To communicate with database we use language(DSB-Data Sub Language) i.e., called Query.
+
+SQL(Structured Query Language)-> Query language through which we communicate to database.
+
+Structured- bcz query is english like (statement)structured language.
+
+DBMS-->communicate-->language(SEQUEL or SQL)
+
+SEQUEL-> Structured English Query Language
+
+non procedural language--> only provide i/p or o/p and need not to provide procedure.
+
+SQL--->
+1.DDL :- Data Definition Language; structure in schema will be created through this
+	create database and tables.
+
+2.DML :- Data Manipulation Language; 
+	insert, select, update, delete
+
+3.DCL :-Data Control Language
+
+4.TCL :-Transmission Control Language
+
+Request from database--Query(It is in the form of commands)
+
+COMMANDS(QUERY)------>
+
+DDL
+
+1.CREATE DATABASE <DB_NAME>; --- To create database;
+2.DROP DATABASE <DB_NAME>;---To delete database
+3.USE <DB_NAME>;---To access database; to create tables in it;
+			message will be shown ->database changed
+4.SHOW DATABASES;---To see all the database;
+
+TO CREATE TABLE----
+
+5.CREATE TABLE <TB_NAME>(COL_NAME TYPE(SIZE) CONSTRAINT1 CONSTRAINT2..., COL_NAME2 TYPE(SIZE) CONSTRAINT...,..);
+	EXAMPLE:
+		create table st(eno int(11) primary key not null auto_increment, name char(20) not null);
+		OR
+		create table st(eno int(11) not null auto_increment, name char(20) not null, primary key(eno));
+		OR
+		TO MAKE MORE THAN ONE PRIMARY KEY-----
+		create table st(id int(10) not null auto increment, eno int(11) not null auto_increment, name char(20) not null, primary key(id,eno));
+
+6. DROP TABLE <TB_NAME>;
+
+7.SHOW TABLES--- To see all tables;
+8.DESCRIBE <TB_NAME>---To describe tables;
+
+ALTER TABLE--To modify the table; To insert and delete column
+
+To add columns
+9.ALTER TABLE <TB_NAME> ADD COL_NAME COL_NAME TYPE(SIZE) CONSTRAINT;
+	No brackets;
+
+To delete column
+10.ALTER TABLE <TB_NAME> DROP COL_NAME;
+
+To change column
+11.ALTER TABLE <TB_NAME> CHANGE OLD_COL NEW_COL definition till whatever we want to change;
+	EXAMPLE:-
+		alter table st change address address varchar(30);
+
+11.ALTER TABLE <TB_NAME> ADD COLUMN COL_NAME AFTER COL_NAME; ---add after particular column
+
+MySQL--> change
+ORACLE--> rename
+
+
+DML
+
+1. insert record
+2. select record
+3. update record
+4. delete record
+
+12. INSERT INTO <TB_NAME>(COL1, COL2...) VALUES(VAL1, VAL2...);
+	EXAMPLE:-
+		insert into st(name, class)values("himanshi",3);
+If column is auto increment then we don't have to insert values for that. ex- id 
+
+For integer and function-->no double quotes
+
+NOW()--For date
+TIMESTAMP -it is datatype for date and time both
+DATE - for date only
+	alter table st add date_on date not null; 
+	
+	EXAMPLE:-
+		insert into st(name, class, date)values("abc",3, now());
+we can skip date and now(); it will come by its own
+
+if timestamp doesn't provide time then do-
+ alter table st change col_name col_name timestamp default current_timestamp;
+ insert into st(name,class,date)values("abc",3,"current_timestamp");
+
+
+
+13. SELECT * FROM <TB_NAME>; ---ALL records  unconditional query
+14. SELECT * FROM <TB_NAME> WHERE CLASS="CE";---To see particular record give condition;
+
+7/2/18
+
+To rename table
+15. RENAME TABLE OLD_NAME TO NEW_NAME;
+
+Alter always work in DDL for altering schema
+
+To alter record
+16. UPDATE <TB_NAME> SET COL_NAME=VALUE;---Change in complete column
+
+To change particular record
+17. UPDATE <TB_NAME> SET COL_NAME=VALUE WHERE ID=3;
+
+18.UPDATE <TB_NAME> SET COL1=VALUE, COL2=VALUE WHERE ID=2;----change multiple records of same id
+									
+19.UPDATE <TB_NAME> SET COL_NAME=VALUE, COL2=VALUE WHERE ID IN(2,3);---change multiple records for 
+									multiple ids
+
+To select particular record
+20. SELECT NAME,ADDRESS FROM EMPLOYEE--uncondtional query;
+
+CONDITIONAL QUERY
+21. SELECT NAME,ADDRESS FROM EMPLOYEE WHERE SALARY>1000;
+
+Delete Record
+22. DELETE FROM <TB_NAME>;---complete table will delete
+23. DELETE FROM <TB_NAME> WHERE ID=1;--- particular id's record will delete
+
+
+21/2/18
+
+
+LOGICAL OPERATOR
+<
+>
+>=
+<=
+<> Not equal to
+
+CONDITIONAL QUERY---> where clause
+
+1. SELECT * FROM EMP WHERE SALARY>1000;
+2. SELECT NAME,SALARY,DEPT FROM EMP WHERE SALARY>1000;
+
+For date
+
+3. SELECT * FROM EMP WHERE DATE='2018-02-01';  /* Attribute name=date*/
+
+To search name with less keyword---> LIKE
+
+
+To select name having o at 2 place
+4. SELECT * FROM EMP WHERE NAME LIKE '_O%'; --->% any no. of character and _ any character before o
+
+To select name having o at any location
+5. SELECT * FROM EMP WHERE NAME LIKE '%O%'; 
+
+To add multiple operation
+ADD
+OR
+NOT
+	
+6. SELECT * FROM EMP WHERE SALARY>=1000 AND DATE='2018-08-02';
+7. SELECT * FROM WHERE NOT SALARY>=1000;
+8. SELECT * FROM EMP WHERE(DEPT='X' OR DEPT='Y')AND DATE>'2018-08-02';
+
+IN BETWEEN
+
+To print all details from initial to final value
+9. SELECT * FROM EMP WHERE SALARY BETWEEN 1000 AND 2000;
+
+To print records having particular values
+10. SELECT * FROM EMP WHERE SALARY IN(1000,1300,5000);
+
+Queries of today-
+1. select * from employee where name LIKE '_i%';
+2. select * from employee where name LIKE '%i%';
+
+3. select name,salary,date,email_id from employee where salary<>2000 AND date>'2018-02-14';
+4. select name,salary,date,email_id,address from employee where address='amu' OR address='bank colony' AND date>'2018-02-14';
+5. insert into employee(name,address,phone_no,email_id,salary,date)values("riya","Bank colony",289292889,"lmo@yahoo.com",1500.34,now());
+6. select name,salary,date,email_id,address from employee where address='amu' OR address='Bank colony' AND salary>=1000;
+7. select name,salary,date,email_id,address from employee where address='Bank colony' OR address='amu' AND salary>=2000;
+8. select name,salary,date,email_id,address from employee where address='Bank colony' OR address='amu' AND NOT salary=2000;
+9. select name,salary,date,email_id,address from employee where address='Bank colony' OR address='amu' AND NOT salary>=2000;
+10.select name,salary,date,email_id,address from employee where address='amu' OR address='Bank colony' AND salary>=1000;
+11.select name,salary,date,email_id,address from employee where (address='Bank colony' OR address='amu') AND  (salary BETWEEN 2000 AND 3000);
+
+
+
+select now();
++---------------------+
+| now()               |
++---------------------+
+| 2018-02-28 22:01:18 |
++---------------------+
+
+SELECT CURRENT_DATE();
++----------------+
+| CURRENT_DATE() |
++----------------+
+| 2018-02-28     |
++----------------+
+ SELECT SYSDATE();
++---------------------+
+| SYSDATE()           |
++---------------------+
+| 2018-02-28 22:07:09 |
++---------------------+
+SELECT DATEDIFF('2018-02-28','2000-01-20');
++-------------------------------------+
+| DATEDIFF('2018-02-28','2000-01-20') |
++-------------------------------------+
+|                                6614 |
++-------------------------------------+
+
+SELECT ABS(DATEDIFF('2000-01-20','2018-02-28' ));
++-------------------------------------------+
+| ABS(DATEDIFF('2000-01-20','2018-02-28' )) |
++-------------------------------------------+
+|                                      6614 |
++-------------------------------------------+
+SELECT DATE('2018-02-12 20:12:12');
++-----------------------------+
+| DATE('2018-02-12 20:12:12') |
++-----------------------------+
+| 2018-02-12                  |
++-----------------------------+
+
+SELECT DATE(NOW());
++-------------+
+| DATE(NOW()) |
++-------------+
+| 2018-02-28  |
++-------------+
+SELECT DATE(CURRENT_DATE());
++----------------------+
+| DATE(CURRENT_DATE()) |
++----------------------+
+| 2018-02-28           |
++----------------------+
+SELECT DATE(SYSDATE());
++-----------------+
+| DATE(SYSDATE()) |
++-----------------+
+| 2018-02-28      |
++-----------------+
+SELECT TIME('2000-01-20 12:23:23');
++-----------------------------+
+| TIME('2000-01-20 12:23:23') |
++-----------------------------+
+| 12:23:23                    |
++-----------------------------+
+
+SELECT TIME(NOW());
++-------------+
+| TIME(NOW()) |
++-------------+
+| 22:15:13    |
++-------------+
+
+
+
+
+alter table employee engine=innodb;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

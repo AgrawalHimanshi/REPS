@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+
+body {
+
+	background: gray ;
+	color: white;
+	margin: 0;
+	
+}
+
+.mySlides {
+	border-style: solid;
+    border-color: coral;
+border-width: 3px;
+}
+#grad1 {
+
+    height: 150px;
+   /* background:  #4682B4; /* For browsers that do not support gradients */    
+    /*background: -webkit-linear-gradient(left top, #4682B4 20%, #000066 100%); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(bottom right, #4682B4 20%, #000066 100%); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(bottom right, #4682B4 20%, #000066 100%); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(to bottom right, #4682B4 20%, #000066 100%); /* Standard syntax (must be last) */
+
+     /*height: 200px;*/
+    background: -webkit-linear-gradient(left,#405580 2%, #000066 100%;) /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #405580 2%, #000066 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #405580 2%, #000066 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #405580 2%, #000066 100%); /* Standard syntax (must be last) */
+   
+    }
+    /*#4682B4 #000066*/
+.image
+{
+	margin-top: 10px;
+	float: left;
+	padding-left: 15px;
+}
+.ECI
+{
+	
+	/*background-color: gray;*/
+	font-size: 25px;
+	height: 30px;	
+	padding-right: 100px; 
+	
+}
+header
+{
+	background: #000066;
+	opacity: .9;
+	color: white; 
+	padding: 15px 0px 2px 30px ;
+	 font-family: 'Roboto Slab', serif;
+	font-size: 35px;
+	height: 55px;
+	margin-top: 0px;
+
+
+	/*#36486b*/
+	
+}
+header h1 
+{
+display: inline;
+	font-family: 'Roboto Slab', serif; 
+}
+nav ul
+{
+	display: inline;
+	padding: 0px;
+	/*float: left;*/
+}
+nav ul li
+{
+	display: inline-block;
+	list-style-type: none;
+	color: white;
+	float: left;
+
+	margin-left: 45px;
+}
+nav ul li a
+{
+	color: white;
+
+	text-decoration: none;
+	font-size: 25px;
+}
+#nav{
+	font-family: 'Roboto Slab', serif;
+}
+
+.homered
+{
+	background-color: red;
+	padding: 15px 10px 25px 10px;
+	text-decoration: underline;
+}
+.homered:hover
+{
+	text-decoration: underline;
+}
+.divider
+{
+	background-color: red;
+	height: 5px ;
+
+}
+.homeblack
+{
+	padding: 15px 10px 25px 10px;
+}
+.homeblack:hover
+{
+	
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 15px 10px 25px 10px;
+	text-decoration: underline;
+}
+
+
+.container
+{
+	position: relative;
+	width: 30%;
+	top: 10%;
+	left: 10%;
+}
+/*.imgregister
+{
+	display: block;
+	width: 100%;
+	height: auto;
+}*/
+.overlay
+{
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+	left: 0%;
+	right: -40%;
+	height: 100%;
+	width: 62.80%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #008CBA;
+	border-radius: 200%;
+	transform: translateY(-50%);
+	 
+}
+
+.container:hover .overlay
+{
+	opacity: 1;
+}
+.text
+{
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+/*.main
+{
+background-image: url(top_banner_29082017.jpg);
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}*/
+
+.main
+{
+background-image: url(vote.jpg);
+
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+/*#footer
+{
+	margin-top: 7%;
+	background:#333;
+	overflow: hidden;
+	opacity: .8;
+}*/
+
+/*---footer starts----*/
+h3
+{
+	font-size: 190%;
+	text-transform: uppercase;
+}
+
+footer
+{
+	background: #333;
+	overflow: hidden;
+	opacity: .9;
+	height: 160px;
+
+}
+#footer-inner
+{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+footer .one-third{
+	width: 45%;
+	margin: 1%;
+	float: left;
+
+}
+footer h3
+{
+	 /*font-family: 'Roboto Slab', serif;*/
+	text-align: center;
+	color: #959595;
+	margin:0%;
+}
+footer h5
+{
+
+	font-size: 120%;
+	padding: 0% 20%;
+}
+footer p
+{
+	color: #959595;
+	text-align: center;
+}
+#footer-third
+{
+	border-right: 1px solid #959595;
+	max-height: 125px;
+	min-height: 125px;
+}
+footer a
+{
+	color: #959595;
+	text-decoration: none;
+}
+
+.social li
+{
+	display: inline;
+}
+.social i
+{
+	font-size: 245%;
+	padding: 0% 20%;
+	color: #959595;
+
+}
+.social i:hover
+{
+	color: #F5F5F5;
+}
+
+h5 a:hover
+{
+	text-decoration: none;
+	color: white;
+}
+
+/*---footer second----*/
+footer.second
+{
+	border-top: 1px solid #4D4E50;
+	max-height: 50px;
+	padding-bottom: 1%;
+	opacity:.95;
+}
